@@ -1,6 +1,6 @@
 # CTF Challenge Portfolio
 
-This repository contains Capture the Flag (CTF) challenges I’ve authored, organized by event.  
+This repository contains Capture the Flag (CTF) challenges I’ve authored or solved, organized by event.  
 Each challenge is designed to simulate real-world vulnerabilities, adversary scenarios, or creative exploitation logic.
 
 ## Latest work
