@@ -5,7 +5,7 @@ Each challenge is designed to simulate real-world vulnerabilities, adversary sce
 
 ## Highlights
 
-- [Supermassive Black Hole](): a web challenge focusing on SMTP smuggling. Release date: August 9 2025.
+- [Supermassive Black Hole](https://github.com/eihart123/CTF-and-Box-Writeups/blob/main/CTFs/UIUCTF-2025/SupermassiveBlackHole.md): a web challenge focusing on SMTP smuggling and exploiting existing CVEs.
 - [The Weakest Link](https://github.com/eihart123/CTF-and-Box-Writeups/blob/main/CTFs/UIUCTF-2024/3-TheWeakestLink.md): The culmination of my UIUCTF 2024 OSINT suite focused on an access control quirk in Spotify.
 - [Frame](https://github.com/eihart123/CTF-and-Box-Writeups/blob/main/CTFs/UIUCTF-2022/Frame.md): A retrospective of an older web challenge of mine focused on a file upload vulnerability.
 
