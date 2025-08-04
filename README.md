@@ -3,11 +3,11 @@
 This repository contains Capture the Flag (CTF) challenges I’ve authored or solved, organized by event.  
 Each challenge is designed to simulate real-world vulnerabilities, adversary scenarios, or creative exploitation logic.
 
-## Latest work
+## Highlights
 
 - [Supermassive Black Hole](): a web challenge focusing on SMTP smuggling. Release date: August 9 2025.
-- [Mr. Blue Sky Suite](): an OSINT suite including an interesting Bluesky quirk and reverse engineering a horoscope chart. Release date: August 9, 2025.
-- [Frame](https://github.com/eihart123/CTF-and-Box-Writeups/blob/main/CTFs/UIUCTF-2022/Frame.md): a retrospective of an oldre web challenge of mine focused on a file upload vulnerability.
+- [The Weakest Link](https://github.com/eihart123/CTF-and-Box-Writeups/blob/main/CTFs/UIUCTF-2024/3-TheWeakestLink.md): The culmination of my UIUCTF 2024 OSINT suite focused on an access control quirk in Spotify.
+- [Frame](https://github.com/eihart123/CTF-and-Box-Writeups/blob/main/CTFs/UIUCTF-2022/Frame.md): A retrospective of an older web challenge of mine focused on a file upload vulnerability.
 
 ## Directory Structure
 
