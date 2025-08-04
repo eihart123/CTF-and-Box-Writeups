@@ -44,7 +44,7 @@ Looks like we can view the responses any tickets that we've submitted and clear 
 
 To know what an abnormal submission would look like, we should define normal functionality for the service. So what happens when we submit a ticket? 
 
-![alt text](image.png)
+![Inputting a valid input in the homepage of Black Hole Ticketing Services](images/validinput.png)
 
 To intercept the request made when I hit "submit ticket", I am using Burp Suite, though it would be visible in the networking tab of your browser's Inspect Element feature as well. This is what sending the form request looks like:
 
@@ -58,17 +58,17 @@ subject=Hello%2C+world%21&message=Please+answer+my+ticket+it%27s+urgent%21
 
 The request looks similar to what we wrote in the form, just with some HTML encoding to ensure that it is parsed as the user would expect it to be. There is a page that briefly shows up that confirms the ticket was submitted:
 
-![alt text](image-1.png)
+![The "Submission Success" page of Black Hole Ticketing Services](images/submissionsuccess.png)
 
 And then we're redirected to the tickets page, which now includes our neglected ticket:
 
-![alt text](image-2.png)
+![Our valid ticket on the "View Ticket" page of Black Hole Ticketing Services](images/viewvalidticket.png)
 
 ### Investigating Source Code
 
 This challenge also comes with a tarball containing the source code of the website and a Dockerfile of the infrastructure setup. There's a lot of moving parts, but here is a high-level diagram:
 
-![alt text](image-3.png)
+![A high-level diagram of how Black Hole Ticketing Services submits a ticket to IT using the SMTP protocol](images/diagram.png)
 
 Important to the vulnerability is specifically in step 2, how the web service formats the user's inputs into an email, as well as step 3, how the email service parses the web service's SMTP request. On the web server side, we see this code:
 
@@ -195,9 +195,9 @@ POST /submit_ticket HTTP/2
 subject=Hello,+World!&message=Escalate+my+email+please%0A.%0D%0AMAIL+FROM%3A%3Cleadership%40blackholeticketing.com%3E%0D%0ARCPT+TO%3A%3Cit%40blackholeticketing.com%3E%0D%0ADATA%0D%0AFrom%3A+leadership%40blackholeticketing.com%0D%0ATo%3A+it%40blackholeticketing.com%0D%0ASubject%3A+CEO+Request%0D%0AX-Ticket-ID%3A+smuggled-message%0D%0A%0D%0AGive+me+the+flag
 ```
 
-The response is an error, but based on my knowledge of SMTP responses, it seems like the message was parsed:
+The response is an error, but based on my knowledge of the SMTP response `250`, which is equivalent to HTTP's `200` response, it seems like the message was parsed:
 
-![alt text](image-4.png)
+![An error stating "250, OK", the valid response of SMTP](images/smtp250response.png)
 
 Once we look at the `/check_response/smuggled-message` endpoint, we see this message:
 
